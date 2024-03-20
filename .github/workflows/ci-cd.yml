@@ -17,7 +17,7 @@ jobs:
           username: ${{ secrets.DOKERHUB_USERNAME }}
           passwrd: ${{ secrets.DOKERHUB_TOKEN }}
           image: kursovaya:latest
-      - name: Build and Push
+      - name: Build Docker Image
         uses: docker/build-push-action@v5
       - name: Deploy
         run: docker rub -d -p 80:80 kursovaya:latest
