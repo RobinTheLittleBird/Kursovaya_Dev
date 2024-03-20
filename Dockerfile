@@ -1,5 +1,5 @@
 # Dockerfile
-FROM node:latest
+FROM kyrsovaya:latest
 
 # Создание директории приложения
 WORKDIR /usr/src/app
