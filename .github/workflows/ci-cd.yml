@@ -11,4 +11,14 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+      - name: Docker build
+        uses: docker/setup-buildx-action@v3
+        with:
+          username: ${{ secrets.DOKERHUB_USERNAME }}
+          passwrd: ${{ secrets.DOKERHUB_TOKEN }}
+          image: kursovaya:latest
+      - name: Build and Push
+        uses: docker/build-push-action@v5
+      - name: Deploy
+        run: docker rub -d -p 80:80 kursovaya:latest
          
