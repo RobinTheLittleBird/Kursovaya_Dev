@@ -1,5 +1,5 @@
 # Dockerfile
-FROM kursovaya:latest
+FROM node:3.18
 
 # Создание директории приложения
 WORKDIR /usr/src/app
