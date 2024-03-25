@@ -1,5 +1,5 @@
 # Dockerfile
-FROM node:3.18
+FROM node:lts-alpine3.19
 
 # Создание директории приложения
 WORKDIR /usr/src/app
