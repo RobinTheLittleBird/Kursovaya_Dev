@@ -14,4 +14,4 @@ jobs:
       - name: Build and Push
         uses: docker/build-push-action@v5
       - name: Deploy
-        run: docker run -d -p 8081:8081 kursovaya:latest
+        run: docker run -d -p 80:80 kursovaya:latest
