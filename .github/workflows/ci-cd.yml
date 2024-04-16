@@ -3,7 +3,7 @@ name: CI/CD Pipline
 on: 
   push:
     branches:
-      - master
+      - Develop
 jobs:
   build-deploy:
     name: build and depoy
