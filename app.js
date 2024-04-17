@@ -7,7 +7,7 @@ const port = 80;
 app.use(express.json());
 
 
-app.get('/', (req, res) => res.send('Hello World!'));
+app.get('/', (req, res) => res.send('Hello World! work?'));
 
 
 // Обработчик маршрута "/days-to-new-year" для вывода количества дней до Нового года
