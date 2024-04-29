@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
   const daysLeft = Math.floor((newYear - today) / (1000 * 60 * 60 * 24)); // Вычисляем количество дней до Нового года
 
   // Отправляем ответ с объединенными данными
-  res.send(`Hello World!! Days left until New Year: ${daysLeft}`);
+  res.send(`Hello Woooooorld!! Days left until New Year: ${daysLeft}`);
 });
 
 
