@@ -20,8 +20,8 @@ jobs:
         run: docker stop kurs
       - name: Remove Previous Container
         run: docker rm kurs
-  build-deploy:
-    name: build and depoy
+  build:
+    name: build
     needs: stop-and-remove-container
     runs-on: self-hosted
     steps:
@@ -36,6 +36,11 @@ jobs:
           context: .
           push: true
           tags: ekaterinapechko/kurs:latest
+  deploy:
+    name: deploy
+    needs: build
+    runs-on: self-hosted
+    steps:
       - name: Get image from Docker Hub
         run: docker pull ekaterinapechko/kurs:latest
       - name: Run Docker Container
