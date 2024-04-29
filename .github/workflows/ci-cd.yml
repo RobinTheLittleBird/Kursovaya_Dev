@@ -11,20 +11,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-  stop-and-remove-container:
-    name: Stop and Remove Previous Container
-    runs-on: self-hosted
-    steps:
-      - name: Stop Previous Container
-        run: docker stop test
-      - name: Remove Previous Container
-        run: docker rm test
   build-deploy:
     name: build and depoy
-    needs: stop-and-remove-container
     runs-on: self-hosted
     steps:
       - name: Build Docker Image
         run: docker build -t test:1 .
       - name: Run Docker Container
-        run: docker run -d -p 80:80 test:1
+        run: docker run -d -p 80:80 --name kurs test:1
