@@ -15,14 +15,10 @@ jobs:
     name: Stop and Remove Previous Container
     runs-on: self-hosted
     steps:
-      - name: Stop container
-        run: |
-          docker stop test || true
-          exit 0  # Не выходим с ошибкой, если контейнер не был запущен
-      - name: Remove container
-        run: |
-          docker rm test || true
-          exit 0  # Не выходим с ошибкой, если контейнер не существует
+      - name: Stop Previous Container
+        run: docker stop test
+      - name: Remove Previous Container
+        run: docker rm test
   build-deploy:
     name: build and depoy
     runs-on: self-hosted
